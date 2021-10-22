@@ -1,0 +1,114 @@
+@import 'nprogress/nprogress'; // importing a css file from the nprogress node module
+@import-normalize;
+/* bring in normalize.css styles */
+
+$font-stack: Helvetica,
+sans-serif;
+$primary-color: #a7b6a7;
+$secondary-color: red;
+
+body {
+  font: 100% $font-stack;
+  background: $primary-color;
+}
+
+.title-test {
+  border: 10x solid $secondary-color;
+  padding: 10px;
+  background-color: aqua;
+  width: 100px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+[class*='col'] {
+  width: 92%;
+  margin-left: 4%;
+  margin-right: 4%;
+  min-height: 1px;
+}
+
+.col-1-2,
+.col-1-4 {
+  background-color: #ffc;
+}
+
+.col-2 {
+  background-color: #fcf;
+}
+
+.col-3 {
+  background-color: #cff;
+}
+
+.col-4 {
+  background-color: #ccf;
+}
+
+
+/* media queries */
+
+/* Mobile Landscape Screen Sizes */
+@media only screen and (min-width: 480px) {
+  [class*='col'] {
+    margin-right: 0;
+    min-height: 1px;
+    float: left;
+
+  }
+
+  .col-1-2,
+  .col-2 {
+    width: 44%;
+  }
+
+  .col-1-4,
+  .col-3,
+  .col-4 {
+    width: 92%;
+  }
+}
+
+/* Desktop screen Sizes */
+
+@media only screen and (min-width: 768) {
+
+  .col-1-2,
+  .col-1-4 {
+    width: 20%
+  }
+
+  .col-2 {
+    width: 44%
+  }
+
+  .col-3 {
+    width: 68%
+  }
+
+  .col-4 {
+    width: 92%
+  }
+}
+
+// it's up developers margins, ...
+
+// Indenting Sass
+// Sass provides nesting functionality. That is to say, by writing this:
+
+.foo {
+  color: red;
+
+  .bar {
+    color: blue;
+  }
+
+}
+// …we will be left with this compiled CSS:
+
+.foo { color: red; }
+.foo .bar { color: blue; }
+

@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Book } from "./components/Book/Book";
+import "./App.scss";
+import { Bookshelf } from "./components/bookshelf/Bookshelf";
+// import component authors
+import { Author } from "./components/Author/Author";
 
-function App() {
+type BookType = {
+  title: string,
+  nroPages: number,
+  authors: Array<string>,
+};
+
+function App(): React.Node {
+  const bookData: BookType = {
+    title: "alicia en el pais de las maravillas",
+    nroPages: 54,
+    authors: ["juan", "pedro", "jose"],
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Book {...bookData} />
+      <Bookshelf />
+      <Author />
     </div>
   );
 }
